@@ -2,42 +2,293 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
+    <!-- Primary Meta Tags -->
+    <title>SHREDIT Tracker | Modern Workout Tracker</title>
+    <meta name="title" content="SHREDIT Tracker | Modern Workout Tracker">
+    <meta name="description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
+    <meta name="author" content="SHREDIT Tracker">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shredit.vercel.app/">
+    <meta property="og:title" content="SHREDIT Tracker | Modern Workout Tracker">
+    <meta property="og:description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
+    <meta property="og:image" content="https://shredit.vercel.app/social-preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shredit.vercel.app/">
+    <meta property="twitter:title" content="SHREDIT Tracker | Modern Workout Tracker">
+    <meta property="twitter:description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
+    <meta property="twitter:image" content="https://shredit.vercel.app/social-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-TileColor" content="#0f172a">
+    
+    <!-- PWA Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Apple Mobile Web App Capable -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SHREDIT Tracker">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/mstile-144x144.png">
+    
+    <!-- Additional Styles -->
+    <style>
+      /* Loading animation */
+      .app-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        animation: pulse 2s infinite;
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+      }
+      
+      .loading-logo svg {
+        width: 40px;
+        height: 40px;
+        color: #0f172a;
+      }
+      
+      .loading-text {
+        color: #94a3b8;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 16px;
+      }
+      
+      .loading-progress {
+        width: 200px;
+        height: 4px;
+        background: #334155;
+        border-radius: 2px;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      
+      .loading-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
+        border-radius: 2px;
+        animation: loading 1.5s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+        }
+      }
+      
+      @keyframes loading {
+        0% {
+          transform: translateX(-100%);
+          width: 20%;
+        }
+        50% {
+          width: 60%;
+        }
+        100% {
+          transform: translateX(200%);
+          width: 20%;
+        }
+      }
+      
+      /* Prevent flash of unstyled content */
+      html {
+        background-color: #0f172a;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+      
+      /* Selection color */
+      ::selection {
+        background-color: rgba(16, 185, 129, 0.3);
+        color: #ffffff;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Prevent text size adjustment on orientation change */
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+    </style>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+      
+      // Remove loading screen when app is ready
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          setTimeout(function() {
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+              loadingScreen.style.display = 'none';
+            }, 500);
+          }, 1000);
+        }
+      });
+      
+      // Theme detection
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      if (prefersDarkScheme.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark'); // Force dark theme
+      }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="app-loading">
+      <div class="loading-logo">
+        <!-- Dumbbell Icon as SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6.5 6.5 11 11"></path>
+          <path d="m21 21-1-1"></path>
+          <path d="m3 3 1 1"></path>
+          <path d="m18 22 4-4"></path>
+          <path d="m2 6 4-4"></path>
+          <path d="m3 10 7-7"></path>
+          <path d="m14 21 7-7"></path>
+        </svg>
+      </div>
+      <div class="loading-text">Loading SHREDIT Tracker...</div>
+      <div class="loading-progress">
+        <div class="loading-progress-bar"></div>
+      </div>
+    </div>
+    
+    <!-- No Script Fallback -->
+    <noscript>
+      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0f172a; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; padding: 20px; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 20px;">🏋️‍♂️</div>
+        <h1 style="color: #10b981; margin-bottom: 16px;">JavaScript Required</h1>
+        <p style="color: #94a3b8; max-width: 500px; line-height: 1.6; margin-bottom: 24px;">
+          SHREDIT Tracker requires JavaScript to run. Please enable JavaScript in your browser settings to use the application.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <a href="https://www.enable-javascript.com/" style="background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">How to Enable JavaScript</a>
+          <a href="https://github.com/YOUR_USERNAME/gym-workout-tracker" style="background: #334155; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">View on GitHub</a>
+        </div>
+      </div>
+    </noscript>
+    
+    <!-- React App Root -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Performance Monitoring -->
+    <script>
+      // Performance monitoring
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const timing = performance.timing;
+          const loadTime = timing.loadEventEnd - timing.navigationStart;
+          console.log('App loaded in', loadTime, 'ms');
+          
+          // Send to analytics if you have any
+          if (window.gtag) {
+            gtag('event', 'timing_complete', {
+              'name': 'load',
+              'value': loadTime,
+              'event_category': 'Performance'
+            });
+          }
+        }, 0);
+      });
+      
+      // Error tracking
+      window.addEventListener('error', function(event) {
+        console.error('Application error:', event.error);
+        // Send to error tracking service if you have one
+      });
+      
+      // Offline detection
+      window.addEventListener('offline', function() {
+        console.log('App is offline');
+        // You could show a notification here
+      });
+      
+      window.addEventListener('online', function() {
+        console.log('App is back online');
+      });
+      
+      // Install prompt for PWA
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        console.log('App can be installed');
+      });
+    </script>
   </body>
 </html>
