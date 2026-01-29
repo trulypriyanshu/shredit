@@ -1,12 +1,19 @@
 {
   "short_name": "Shredit",
   "name": "Shredit - Gym Workout Tracker",
+  "id": "/",
   "description": "Track your workouts, monitor progress, and achieve fitness goals",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
     },
     {
       "src": "logo192.png",
@@ -19,6 +26,22 @@
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Shredit workout tracker"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "414x896",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Shredit workout tracker"
     }
   ],
   "start_url": ".",
