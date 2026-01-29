@@ -28,7 +28,7 @@ A modern, responsive workout tracking application with progress tracking, achiev
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| ![Desktop](public/screenshot-mobile.png/400x250/1e293b/ffffff?text=Desktop+View) | ![Mobile](public/screenshot-mobile.png/200x400/1e293b/ffffff?text=Mobile+View) |
+| ![Desktop](public/screenshot-desktop.png/400x250/1e293b/ffffff?text=Desktop+View) | ![Mobile](public/screenshot-mobile.png/200x400/1e293b/ffffff?text=Mobile+View) |
 
 ## 🛠️ Tech Stack
 
