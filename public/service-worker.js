@@ -20,6 +20,12 @@ self.addEventListener('install', event => {
 
 // Fetch event
 self.addEventListener('fetch', event => {
+    // Allow static files to be fetched directly
+  if (event.request.url.includes('.png') || 
+      event.request.url.includes('.ico') ||
+      event.request.url.includes('.json')) {
+    return; // Let browser handle it
+  }
   event.respondWith(
     caches.match(event.request)
       .then(response => {
