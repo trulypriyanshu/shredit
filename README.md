@@ -185,5 +185,5 @@ Give a ⭐️ if this project helped you!
 
 ---
 
-**Built with ❤️ by [Your Name]**  
+**Built with ❤️ by Priyanshu Bhardwaj**  
 *Stay consistent, lift smart, track progress!*
