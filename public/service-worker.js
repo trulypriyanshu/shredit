@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = 'shredit-v1';
+const CACHE_NAME = 'shredit-v2';
 const urlsToCache = [
   '/',
   '/index.html',
