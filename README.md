@@ -7,7 +7,7 @@
 
 A modern, responsive workout tracking application with progress tracking, achievements, and session timing. Built with React and Tailwind CSS.
 
-![App Screenshot](https://user-images.githubusercontent.com/.../screenshot.png) <!-- Add your screenshot later -->
+![App Screenshot](public/screenshot-desktop.png) <!-- Add your screenshot later -->
 
 ## ✨ Features
 
@@ -28,7 +28,7 @@ A modern, responsive workout tracking application with progress tracking, achiev
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| ![Desktop](https://via.placeholder.com/400x250/1e293b/ffffff?text=Desktop+View) | ![Mobile](https://via.placeholder.com/200x400/1e293b/ffffff?text=Mobile+View) |
+| ![Desktop](public/screenshot-mobile.png/400x250/1e293b/ffffff?text=Desktop+View) | ![Mobile](public/screenshot-mobile.png/200x400/1e293b/ffffff?text=Mobile+View) |
 
 ## 🛠️ Tech Stack
 
