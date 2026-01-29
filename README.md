@@ -171,8 +171,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Vercel](https://vercel.com) for seamless deployment
 - Inspired by various fitness tracking applications
 
-## 📞 Contact
+## 📞 Contact & Support
 
 Priyanshu Bhardwaj - [@priyanshubhardwaj](https://linkedin.com/in/priyanshubhardwaj) - iampriyanshubhardwaj@gmail.com
 
 Project Link: [https://github.com/trulypriyanshu/shredit](https://github.com/trulypriyanshu/shredit)
+
+Found a bug or have a feature request? [Open an issue](https://github.com/trulypriyanshu/shredit/issues)
+
+## 🌟 Show Your Support
+
+Give a ⭐️ if this project helped you!
+
+---
+
+**Built with ❤️ by [Your Name]**  
+*Stay consistent, lift smart, track progress!*
