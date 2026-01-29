@@ -1,9 +1,9 @@
 # 🏋️ Shred It - Gym Workout Tracker
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://shredit.vercel.app)
-[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://vercel.com)
+[![React]([https://img.shields.io/badge/React-18-blue](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB))](https://reactjs.org)
+[![Tailwind CSS]([https://img.shields.io/badge/Tailwind-CSS-38B2AC](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white))](https://tailwindcss.com)
+[![Vercel]([https://img.shields.io/badge/Deployed%20on-Vercel-black](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white))](https://vercel.com)
 
 A modern, responsive workout tracking application with progress tracking, achievements, and session timing. Built with React and Tailwind CSS.
 
