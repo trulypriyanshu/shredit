@@ -2,293 +2,253 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     
     <!-- Primary Meta Tags -->
-    <title>SHREDIT Tracker | Modern Workout Tracker</title>
-    <meta name="title" content="SHREDIT Tracker | Modern Workout Tracker">
-    <meta name="description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
-    <meta name="author" content="SHREDIT Tracker">
+    <title>Shredit - Track Your Fitness Journey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="A modern workout tracking app with progress tracking, achievements, and session timing. Track exercises, log weights, and monitor your fitness journey." />
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shredit.vercel.app/">
-    <meta property="og:title" content="SHREDIT Tracker | Modern Workout Tracker">
-    <meta property="og:description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
-    <meta property="og:image" content="https://shredit.vercel.app/social-preview.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shredit.vercel.app/" />
+    <meta property="og:title" content="Shredit - Track Your Fitness Journey" />
+    <meta property="og:description" content="A modern workout tracking app with progress tracking, achievements, and session timing. Track exercises, log weights, and monitor your fitness journey." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://shredit.vercel.app/">
-    <meta property="twitter:title" content="SHREDIT Tracker | Modern Workout Tracker">
-    <meta property="twitter:description" content="Track workouts, monitor progress, and unlock achievements. A modern workout tracking application with multiple splits, progress tracking, and session timing.">
-    <meta property="twitter:image" content="https://shredit.vercel.app/social-preview.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://shredit.vercel.app/" />
+    <meta property="twitter:title" content="Shredit - Track Your Fitness Journey" />
+    <meta property="twitter:description" content="A modern workout tracking app with progress tracking, achievements, and session timing. Track exercises, log weights, and monitor your fitness journey." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>" />
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>" />
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#0f172a">
-    <meta name="msapplication-TileColor" content="#0f172a">
-    
-    <!-- PWA Manifest -->
+    <!-- PWA Configuration -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Shredit" />
     
-    <!-- Preconnect for performance -->
+    <!-- Font Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Apple Mobile Web App Capable -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="SHREDIT Tracker">
+    <!-- Progressive Web App Features -->
+    <meta name="application-name" content="Shredit" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Additional iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Shredit" />
+    
+    <!-- Theme Color for Different Browsers -->
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)">
     
     <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/mstile-144x144.png">
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/mstile-144x144.png" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
     
-    <!-- Additional Styles -->
-    <style>
-      /* Loading animation */
-      .app-loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out;
-      }
-      
-      .loading-logo {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 24px;
-        animation: pulse 2s infinite;
-        box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
-      }
-      
-      .loading-logo svg {
-        width: 40px;
-        height: 40px;
-        color: #0f172a;
-      }
-      
-      .loading-text {
-        color: #94a3b8;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        margin-top: 16px;
-      }
-      
-      .loading-progress {
-        width: 200px;
-        height: 4px;
-        background: #334155;
-        border-radius: 2px;
-        margin-top: 20px;
-        overflow: hidden;
-      }
-      
-      .loading-progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
-        border-radius: 2px;
-        animation: loading 1.5s ease-in-out infinite;
-      }
-      
-      @keyframes pulse {
-        0%, 100% {
-          transform: scale(1);
-          box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
-        }
-        50% {
-          transform: scale(1.05);
-          box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
-        }
-      }
-      
-      @keyframes loading {
-        0% {
-          transform: translateX(-100%);
-          width: 20%;
-        }
-        50% {
-          width: 60%;
-        }
-        100% {
-          transform: translateX(200%);
-          width: 20%;
-        }
-      }
-      
-      /* Prevent flash of unstyled content */
-      html {
-        background-color: #0f172a;
-      }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: #1e293b;
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: #475569;
-        border-radius: 5px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: #64748b;
-      }
-      
-      /* Selection color */
-      ::selection {
-        background-color: rgba(16, 185, 129, 0.3);
-        color: #ffffff;
-      }
-      
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Prevent text size adjustment on orientation change */
-      html {
-        -webkit-text-size-adjust: 100%;
-      }
-    </style>
+    <!-- Favicon for Different Platforms -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#0f172a">
     
-    <!-- PWA Service Worker Registration -->
-    <script>
-      // Register service worker
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
+    <!-- Additional Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+    
+    <!-- Prevent Phone Number Detection -->
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Prevent Google Translate -->
+    <meta name="google" content="notranslate">
+    
+    <!-- Prevent iOS Auto Zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Splash Screen for iOS -->
+    <link href="%PUBLIC_URL%/splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    
+    <!-- Performance Optimizations -->
+    <link rel="preload" as="style" href="%PUBLIC_URL%/static/css/main.css" />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Shredit",
+      "description": "A modern workout tracking app with progress tracking, achievements, and session timing",
+      "url": "https://shredit.vercel.app",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "author": {
+        "@type": "Person",
+        "name": "Priyanshu Bhardwaj"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-      
-      // Remove loading screen when app is ready
-      window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loading-screen');
-        if (loadingScreen) {
-          setTimeout(function() {
-            loadingScreen.style.opacity = '0';
-            setTimeout(function() {
-              loadingScreen.style.display = 'none';
-            }, 500);
-          }, 1000);
-        }
-      });
-      
-      // Theme detection
-      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-      if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark'); // Force dark theme
-      }
+    }
     </script>
+    
+    <!-- Additional SEO -->
+    <meta name="keywords" content="workout tracker, gym app, fitness tracker, exercise log, weight training, workout planner, gym progress, fitness app" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="author" content="Priyanshu Bhardwaj" />
+    
+    <!-- Security Headers (will be added by Vercel) -->
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="app-loading">
-      <div class="loading-logo">
-        <!-- Dumbbell Icon as SVG -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m6.5 6.5 11 11"></path>
-          <path d="m21 21-1-1"></path>
-          <path d="m3 3 1 1"></path>
-          <path d="m18 22 4-4"></path>
-          <path d="m2 6 4-4"></path>
-          <path d="m3 10 7-7"></path>
-          <path d="m14 21 7-7"></path>
-        </svg>
-      </div>
-      <div class="loading-text">Loading SHREDIT Tracker...</div>
-      <div class="loading-progress">
-        <div class="loading-progress-bar"></div>
-      </div>
-    </div>
-    
-    <!-- No Script Fallback -->
+    <!-- Progressive Enhancement -->
     <noscript>
-      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0f172a; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; padding: 20px; text-align: center;">
-        <div style="font-size: 48px; margin-bottom: 20px;">🏋️‍♂️</div>
-        <h1 style="color: #10b981; margin-bottom: 16px;">JavaScript Required</h1>
-        <p style="color: #94a3b8; max-width: 500px; line-height: 1.6; margin-bottom: 24px;">
-          SHREDIT Tracker requires JavaScript to run. Please enable JavaScript in your browser settings to use the application.
-        </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-          <a href="https://www.enable-javascript.com/" style="background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">How to Enable JavaScript</a>
-          <a href="https://github.com/YOUR_USERNAME/gym-workout-tracker" style="background: #334155; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">View on GitHub</a>
+      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px;">
+        <div style="text-align: center; max-width: 600px;">
+          <h1 style="color: #10b981; margin-bottom: 20px;">🚫 JavaScript Required</h1>
+          <p style="margin-bottom: 15px; line-height: 1.6;">This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+          <p style="color: #94a3b8; font-size: 0.9em;">Alternatively, you can try another browser.</p>
         </div>
       </div>
     </noscript>
     
-    <!-- React App Root -->
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #0f172a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+      transition: opacity 0.3s ease;
+    ">
+      <div style="
+        width: 80px;
+        height: 80px;
+        border: 3px solid rgba(16, 185, 129, 0.3);
+        border-top-color: #10b981;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      "></div>
+      <div style="color: #e2e8f0; font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Loading Shredit</div>
+      <div style="color: #94a3b8; font-size: 0.9rem;">Getting your workout plan ready...</div>
+    </div>
+    
+    <!-- Root Element -->
     <div id="root"></div>
     
-    <!-- Performance Monitoring -->
+    <!-- Loading Script -->
     <script>
-      // Performance monitoring
+      // Hide loading screen when app is ready
       window.addEventListener('load', function() {
         setTimeout(function() {
-          const timing = performance.timing;
-          const loadTime = timing.loadEventEnd - timing.navigationStart;
-          console.log('App loaded in', loadTime, 'ms');
-          
-          // Send to analytics if you have any
-          if (window.gtag) {
-            gtag('event', 'timing_complete', {
-              'name': 'load',
-              'value': loadTime,
-              'event_category': 'Performance'
-            });
+          var loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+              loadingScreen.style.display = 'none';
+            }, 300);
           }
-        }, 0);
+        }, 800);
       });
       
-      // Error tracking
-      window.addEventListener('error', function(event) {
-        console.error('Application error:', event.error);
-        // Send to error tracking service if you have one
-      });
+      // CSS for spinner animation
+      var style = document.createElement('style');
+      style.textContent = `
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(style);
       
-      // Offline detection
-      window.addEventListener('offline', function() {
-        console.log('App is offline');
-        // You could show a notification here
-      });
+      // Service Worker Registration (will be handled by React)
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js');
+        });
+      }
       
-      window.addEventListener('online', function() {
-        console.log('App is back online');
-      });
-      
-      // Install prompt for PWA
+      // PWA Installation Prompt
       let deferredPrompt;
       window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
-        // Stash the event so it can be triggered later
         deferredPrompt = e;
-        // Update UI to notify the user they can add to home screen
-        console.log('App can be installed');
       });
+    </script>
+    
+    <!-- Analytics (Optional - Add your own) -->
+    <!-- Google Analytics Example -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    
+    <!-- Error Boundary Fallback (Optional) -->
+    <div id="error-boundary" style="display: none;">
+      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; z-index: 10000; padding: 20px;">
+        <div style="text-align: center; max-width: 600px;">
+          <h1 style="color: #ef4444; margin-bottom: 20px;">⚠️ Something went wrong</h1>
+          <p style="margin-bottom: 15px; line-height: 1.6;">The application encountered an error. Please refresh the page or try again later.</p>
+          <button onclick="window.location.reload()" style="
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+          ">Refresh Page</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Legacy Browser Support Message -->
+    <script>
+      // Check for modern browser features
+      if (!('Promise' in window) || !('fetch' in window) || !('localStorage' in window)) {
+        document.body.innerHTML = `
+          <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #0f172a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+          ">
+            <div>
+              <h2 style="color: #ef4444;">Browser Update Required</h2>
+              <p>Your browser is outdated. Please update to a modern browser like Chrome, Firefox, or Edge to use this application.</p>
+            </div>
+          </div>
+        `;
+      }
     </script>
   </body>
 </html>
