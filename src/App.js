@@ -328,7 +328,7 @@ const Header = ({
               </div>
               <div>
                 <h1 className="text-xl font-bold tracking-tight text-white leading-none">
-                  GYM<span className="text-emerald-400">PRO</span>
+                  SHRED<span className="text-emerald-400">IT</span>
                 </h1>
                 <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Tracker</p>
               </div>
